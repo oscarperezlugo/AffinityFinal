@@ -24,7 +24,7 @@ namespace ReachSystem
         }
         protected void Unnamed1_Click(object sender, EventArgs e)
         {
-            int mes = DateTime.Now.Month + 1;
+            
             string definidor = DropDownList4.SelectedValue.ToString();            
             using (SqlConnection openCon = new SqlConnection("workstation id=affisDB.mssql.somee.com;packet size=4096;user id=localarts_SQLLogin_2;pwd=kgiivi9to9;data source=affisDB.mssql.somee.com;persist security info=False;initial catalog=affisDB"))
             {
@@ -147,13 +147,13 @@ namespace ReachSystem
             using (SqlConnection openCon = new SqlConnection("workstation id=affisDB.mssql.somee.com;packet size=4096;user id=localarts_SQLLogin_2;pwd=kgiivi9to9;data source=affisDB.mssql.somee.com;persist security info=False;initial catalog=affisDB"))
             {
 
-                string saveStaff = "INSERT INTO Pagos (RazonSocial, Mes, Deuda, Status) VALUES (@RazonSocial, @Mes, 0, PENDIENTE)";
-
+                string saveStaff = "INSERT INTO Pagos (RazonSocial, Mes, Deuda, Status) VALUES (@RazonSocial, @Mes, '0', 'PENDIENTE')";
+                int mes = 1;
                 using (SqlCommand querySaveStaff = new SqlCommand(saveStaff))
                 {
                     querySaveStaff.Connection = openCon;
                     querySaveStaff.Parameters.Add("@RazonSocial", SqlDbType.VarChar).Value = Request.Cookies["emprecobnom"].Value;
-                    querySaveStaff.Parameters.Add("@Mes", SqlDbType.DateTime).Value = "" + DateTime.Now.Year + "-" + mes + "-01";
+                    querySaveStaff.Parameters.Add("@Mes", SqlDbType.DateTime).Value = "" + DateTime.Now.Year + "-01-01";
                     try
                     {
                         openCon.Open();

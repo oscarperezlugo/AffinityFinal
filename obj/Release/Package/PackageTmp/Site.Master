@@ -7,12 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tarrago Reach System</title>
+    
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+    <title>AFFIINITY</title>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="Content/columnas.css" rel="stylesheet" />
@@ -22,14 +22,18 @@
 </head>
 <body>
     <form runat="server">
-       <nav class="nave fijador">
+       <nav class="nave fila fijador">
             <div  class="col2L  col0M col0S col0T" >
-                  <a href="Default.aspx"><img id="logo" src="https://www.tarrago.com/wp-content/uploads/2019/07/logo-tarrago-web.png" /></a>
-            </div>            
+                  <a href="Default.aspx"><img id="logo" src="https://1.bp.blogspot.com/-pWSO2elPkeI/X5woEanJ0GI/AAAAAAAAPkI/UMptMYuBh6oX0V61V2758z_VF52oc8i-ACLcBGAsYHQ/s16000/logo.png" /></a>
+            </div>   
+           <div id="barra" class="col4L col6M col6S col10T">
+               <input class="col7L busqueda busquedaL busquedaM busquedaS" id="busqueda" type="text" placeholder="Cedula/Certificado" runat="server" />
+               <asp:LinkButton id="searching" class="fa fa-search searchbut" onclick="BuscarClick" runat="server"></asp:LinkButton>                   
+                </div>
         </nav>
         <nav class="subnave fijadordos">
-            <label class="fa fa-bars botonsub" for="check"/>  
-            <asp:Label ID="Label1" runat="server" CssClass="nomlog" for="chek"/>
+            <label class="fa fa-bars botonsub" for="check"/>&ensp;  
+            <i class="fas fa-user"></i>&ensp;<asp:Label ID="Label1" runat="server" CssClass="nomlog" for="chek"></asp:Label>
         </nav> 
         <div id="cajacontenedor" class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -38,26 +42,109 @@
         <input type="checkbox" class="checkbox" id="check"/>
         <label class="panelbloqueadorizq" for="check"></label>
         <div id="block1" class="menulateral" >
-            <div class="desplegable">
+            <div class="desplegable" id="BLOQUE1" runat="server">
                 
-                <h3 class="titulomenu">USUARIOS</h3>
+                <h3 class="titulomenu">WSM</h3>
                 <ul>
-                    <li><a href="ListaUsuarios.aspx">LISTA</a></li>
-                    <li><a href="CreacionUsuario.aspx">CREACION</a></li>  
-                    <%--<li><a href="ListaUsuariosPen.aspx">PENDIENTES</a></li>--%>
+                    <li>EMPRESA</li>
+                    <li>
+                        <ul>
+                            <li><a href="Default2.aspx">APERTURAR</a></li>
+                        </ul>
+                    </li>
+                    <li>VENTAS</li>  
+                    <li>
+                        <ul>
+                            <li><a href="NombreConsulta.aspx">CONSULTAS</a></li>
+                            <li><a href="InicioProceso.aspx">INCLUSION</a></li>
+                            <li><a href="AdicionConsulta.aspx">ADICION</a></li>  
+                            <li><a href="ReemplazoCons.aspx">REEMPLAZO</a></li> 
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            <div class="desplegable">
-                <h3 class="titulomenu">PRODUCTOS</h3>
+            <div class="desplegable" id="BLOQUE2" runat="server">                
+                <h3 class="titulomenu">BANCA SEGUROS</h3>
                 <ul>
-                    <li><a href="Default.aspx">LISTA</a></li>
-                    <li><a href="CreacionProductoUno.aspx">CREACION</a></li>
-                    <li><a href="Default.aspx">ACTUALIZACION</a></li>
-                    <li><a href="Descarga.aspx">DESCARGA</a></li>
+                    <li>EMPRESA</li>
+                    <li>
+                        <ul>
+                            <li><a href="Default.aspx">APERTURAR</a></li>
+                        </ul>
+                    </li>
+                    <li>VENTAS</li>  
+                    <li>
+                        <ul>
+                            <li><a href="InicioProceso.aspx">INCLUSION</a></li>
+                            <li><a href="AdicionConsulta.aspx">ADICION</a></li>                          
+                        </ul>
+                    </li>
+                    <li>COBRANZAS</li>  
+                    <li>
+                        <ul>
+                            <li><a href="CobranzaEmpUno.aspx">GESTION EMPRESA</a></li>                                                       
+                        </ul>
+                    </li>
                 </ul>
             </div>
-            <div class="desplegable">
-                <asp:Button CausesValidation="False" OnClick="CierreClick" runat="server" CssClass="botoncierre" Text="CERRAR SESION"  />                                 
+            <div class="desplegable" id="BLOQUE3" runat="server">                
+                <h3 class="titulomenu">OPERACIONES</h3>
+                <ul>
+                    <li>CERTIFICADOS</li>
+                    <li>
+                        <ul>
+                            <li><a href="AdminCert.aspx">ADMINISTRACION</a></li>
+                            <li><a href="ProcCert.aspx">PROCESAMIENTO</a></li>
+                            <li><a href="ProReten.aspx">RETENCIONES</a></li>
+                        </ul>
+                    </li>
+                    <li>PRODUCTOS</li>  
+                    <li>
+                        <ul>
+                            <li>WSM</li>
+                            <li>
+                                <ul>
+                                    <li><a href="ProdLista.aspx">LISTA</a></li>
+                                    <li><a href="ProdCreacion.aspx">CREACION</a></li>
+                                    <li><a href="ProdListaEdic.aspx">EDICION</a></li>
+                                </ul>
+                            </li>
+                            <li>BANCA SEGUROS</li>  
+                            <li>
+                                <ul>
+                                    <li><a href="ProdLista.aspx">LISTA</a></li>
+                                    <li><a href="ProdCreacion.aspx">CREACION</a></li>
+                                    <li><a href="ProdListaEdic.aspx">EDICION</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>ADMINISTRACION</li>  
+                    <li>
+                        <ul>
+                            <li><a href="EmpDetalleUno.aspx">EMPRESA DETALLES</a></li>   
+                            <li><a href="AsistenciaLista.aspx">REGISTRO ASISTENCIA</a></li> 
+                        </ul>
+                    </li>
+                    <li>COBRANZAS</li>  
+                    <li>
+                        <ul>
+                            <li><a href="CobranzaEmpUno.aspx">GESTION EMPRESA</a></li>   
+                            <li>GESTION TOMADOR</li> 
+                        </ul>
+                    </li>
+                    <li><a href="#">RECLAMOS</a></li>  
+                    <li>
+                        <ul>
+                            <li>CASOS NUEVOS</li> 
+                            <li>PROCESAMIENTO</li>   
+                            <li>SEGUIMIENTO</li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>            
+            <div class="desplegable cierre">
+                &ensp;<asp:LinkButton CausesValidation="False" OnClick="CierreClick" runat="server" CssClass="botoncierre"   ><i class="fa fa-user"></i> CERRAR SESION</asp:LinkButton>                                 
             </div>            
         </div>            
     </form>

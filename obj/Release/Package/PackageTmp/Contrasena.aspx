@@ -9,7 +9,7 @@
         <meta name="description"  content="Tarrago Brands"/>
         <meta name="keywords"  content="QUIMICOS"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
-        <title>Tarrago Reach System</title>
+        <title>AFFINITY</title>
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="Content/columnas.css" rel="stylesheet" />
         <link href="Content/Site.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
          <nav class="nave fila col10L">
             <div class="col2L">
-                <img id="logo" src="https://www.tarrago.com/wp-content/uploads/2019/07/logo-tarrago-web.png"/>
+                <img id="logo" src="https://1.bp.blogspot.com/-pWSO2elPkeI/X5woEanJ0GI/AAAAAAAAPkI/UMptMYuBh6oX0V61V2758z_VF52oc8i-ACLcBGAsYHQ/s16000/logo.png"/>
             </div>                       
         </nav>
         <div class="subnave"/>
@@ -28,19 +28,19 @@
             <br />
             <br />
             <br />
-            <p><h2>Recover password</h2></p>            
+            <p><h2>Recuperar Contraseña</h2></p>            
             <div class="fila col10L">
-                <input class="formulario" placeholder="Email" type="email"  required id="text1" runat="server"/>            
+                <input class="formulario" placeholder="Correo" type="email"  required id="text1" runat="server"/>            
             </div>                        
             <div class="fila col10L">
-                <input class="formulario" placeholder="New Password" type="password" required id="text2" runat="server"/>            
+                <input class="formulario" placeholder="Contraseña" type="password" required id="text2" runat="server"/>            
             </div>
             <div class="fila col10L">
-                <input class="formulario" placeholder="Repeat new Password" type="password" required id="text3" runat="server"/>            
+                <input class="formulario" placeholder="Repetir Contraseña" type="password" required id="text3" runat="server"/>            
             </div>            
-            <p><a class="enlaces" href="Login.aspx">Back to Login</a></p>
+            <p><a class="enlaces" href="Login.aspx">Volver al Login</a></p>
             <div class="fila col10L">
-                <asp:Button runat="server" class="botonsubmit" value="CAMBIAR CONTRASEÑA" text="RECOVER PASSWORD" type="submit" OnClick="Unnamed1_Click1" />            
+                <asp:Button runat="server" class="botonsubmit" value="CAMBIAR CONTRASEÑA" text="RECUPERAR CONTRASEÑA" type="submit" OnClick="Unnamed1_Click1" />            
             </div>
         </div>        
     </form>

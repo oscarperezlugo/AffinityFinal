@@ -3,22 +3,22 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: Arial;
+    font-family: 'Trebuchet MS';
 }
 /*#BodyContent{
     position:relative;
     top:130px;
 }*/
 .nave {
-    background-color: black;
+    background-color: #338EFF;
     height: 100px;
 }
-.nomlog{
-    font-family:'Trebuchet MS';
+.nomlog {
+    font-family: 'Trebuchet MS';
 }
 
 .subnave {
-    background-color: red;
+    background-color: #73B1FF;
     height: 30px;
     color: white;
     font-weight: bold;
@@ -37,16 +37,17 @@
     background-color: #293133;
     padding: 10px;
     width: 30%;
-    min-height: 100%;
+    /*min-height: 100%; */   
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     position: fixed;
     top: 130px;
     bottom: 0px;
     margin-left: -30%;
     transition: left 0.7s;
     z-index: 2;
-    overflow: auto;
+    overflow-y: scroll;
+    
 }
 
 li:hover {
@@ -73,10 +74,10 @@ div {
 }
 
 #logo {
-    margin: 10px;
-    height: 80px;
+    margin: 35px;
+    height: 20px;
     text-align: center;
-    line-height: 100px;
+    line-height: 20px;
 }
 
 .mGrid button {
@@ -93,12 +94,13 @@ div {
 
 li a {
     text-decoration: none;
-    color: white;
+    color: gray;
+    font-size:18px;
 }
 
     li a:hover {
         text-decoration: none;
-        color: red;
+        color: #338EFF;
     }
 
 .baseform {
@@ -110,6 +112,54 @@ li a {
     width: 50%;
     border-color: black;
     margin: 20px;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS';
+}
+.formularioblock {
+    padding: 10px;
+    width: 50%;
+    border-color: black;    
+    border-radius: 5px;
+    background-color:lightgray;
+    font-family: 'Trebuchet MS';
+}
+.formularioProc {
+    padding: 10px;
+    width: 90%;
+    border-color: black;   
+    border-radius: 5px;
+    font-family: 'Trebuchet MS';
+    
+}
+.formularioProc2 {
+    padding: 10px;
+    width: 90%;
+    border-color: black;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS';
+    margin-bottom:10px;
+}
+.formularioFin {
+    padding: 10px;
+    width: 90%;
+    border-color: black;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS';
+    color:green;
+    font-size:18px;
+}
+.formularioDeuda {
+    padding: 10px;
+    width: 90%;
+    border-color: black;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS';
+    color: red;
+    font-size: 18px;
+}
+.formularioProcDOS {
+    padding: 10px;    
+    border-color: black;
     border-radius: 5px;
     font-family: 'Trebuchet MS';
 }
@@ -130,6 +180,27 @@ li a {
     color: white;
     border-radius: 5px;
     padding: 10px;
+}
+.botonsubmitDOS {
+    background-color: black;
+    border-color: black;
+    width: 20%;
+    font-family: 'Trebuchet MS';
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    float:right;
+    margin:5px;
+}
+.botonsubmitTRES {
+    background-color: #73B1FF;
+    border-color: black;
+    width: 22%;
+    font-family: 'Trebuchet MS';
+    color: white;
+    border-radius: 5px;
+    padding: 10px;    
+    margin: 5px;
 }
 
 .botonedit {
@@ -271,7 +342,7 @@ input[type="file"] {
     margin: 0;
     position: fixed;
     width: 100%;
-    top: 100px;
+    top: 99px;
     z-index: 1;
     overflow: hidden;
 }
@@ -439,7 +510,7 @@ formpago {
     text-decoration: none;
     font-family: 'Trebuchet MS';
     color: dimgray;
-    white-space:pre-wrap;
+    white-space: pre-wrap;
 }
 
 .nombrecierre {
@@ -504,6 +575,52 @@ formpago {
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
 .container {
-    width: 50%;
+    width: 70%;
     margin: 10px auto;
+}
+
+ul ul {
+    list-style: none;
+    font-weight: bold;
+    font-size: 12px;
+    
+}
+ul ul ul {
+    list-style: none;
+    font-weight: normal;
+    font-size: 10px;
+    color:white;
+}
+ul {
+    list-style: none;
+    color: #73B1FF;
+}
+.cierre{
+    margin-bottom:50px;
+}
+.desplegable{
+    position:relative;
+    max-height:100%;
+}
+#barra .fa {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 4.5;
+    margin-left: -14px;
+    border-radius: 0px 20px 20px 0px;
+}
+
+    #barra .fa:hover {
+        background-color: gray;
+    }
+
+    #barra .fa:active {
+        background-color: white;
+    }
+nav div {
+    float: left;
 }

@@ -9,7 +9,7 @@
         <meta name="description"  content="Tarrago Brands"/>
         <meta name="keywords"  content="QUIMICOS"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>        
-        <title>Tarrago Reach System</title>
+        <title>AFFINITY</title>
         <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <link href="Content/columnas.css" rel="stylesheet" />
         <link href="Content/Site.css" rel="stylesheet" />
@@ -19,7 +19,7 @@
     <form id="form1" runat="server">
          <nav class="nave fila col10L">
             <div class="col2L">
-                <img id="logo" src="https://www.tarrago.com/wp-content/uploads/2019/07/logo-tarrago-web.png"/>
+                <img id="logo" src="https://1.bp.blogspot.com/-pWSO2elPkeI/X5woEanJ0GI/AAAAAAAAPkI/UMptMYuBh6oX0V61V2758z_VF52oc8i-ACLcBGAsYHQ/s16000/logo.png"/>
             </div>                       
         </nav>
         <div class="subnave"/>
@@ -29,13 +29,13 @@
             <br />
             <p><h2>LOGIN</h2></p>
             <div class="fila col10L">
-                <input class="formulario" placeholder="Email" id="Correo" type="email" required runat="server"/>            
+                <input class="formulario" placeholder="Correo" id="Correo" type="email" required runat="server"/>            
             </div>                       
             <div class="fila col10L">
-                <input class="formulario" placeholder="Password" id="Contrasena" type="password" required runat="server"/>            
+                <input class="formulario" placeholder="Contraseña" id="Contrasena" type="password" required runat="server"/>            
             </div>            
-            <p><a class="enlaces" href="Registro.aspx">Don't you have an account? sign up here</a></p>
-            <p><a class="enlaces" href="Contrasena.aspx">Change Password</a></p>
+            <%--<p><a class="enlaces" href="Registro.aspx">Don't you have an account? sign up here</a></p>--%>
+            <p><a class="enlaces" href="Contrasena.aspx">Recuperar Contraseña</a></p>
             <div class="fila col10L">
                 <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="LOGIN" OnClick="Unnamed1_Click" />            
             </div>

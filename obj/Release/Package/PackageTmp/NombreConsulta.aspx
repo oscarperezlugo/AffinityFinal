@@ -1,27 +1,31 @@
-﻿<%@ Page Title="Tarrago Reach System" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdicionConsulta.aspx.cs" Inherits="ReachSystem.AdicionConsulta" %>
+﻿<%@ Page Title="Tarrago Reach System" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="NombreConsulta.aspx.cs" Inherits="ReachSystem.NombreConsulta" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server"> 
     <div class="container">
     <div class="card">
         <div class="card-header">
                 <div class="form-row">
                     <div class="col10L">                        
-                        <asp:Label ID="Label6" runat="server" Text="ADICION: CONSULTAS" Style="font-weight: bold; font-size: 18px;"></asp:Label>                        
+                        <asp:Label ID="Label6" runat="server" Text="CONSULTAS" Style="font-weight: bold; font-size: 18px;"></asp:Label>                        
                     </div>                   
                 </div>
             </div>
         <div class="card-body">
                 <div class="form-row">
-    <center><input class="formulario" placeholder="Cedula" id="Correo" type="text" runat="server"  AutoPostBack="true"/>
-        <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BASE INTERNA"  OnClick="Unnamed1_Click"/></center>                        
+    <center><asp:Label ID="Label2" runat="server" Text="CONSULTAS NOMBRE O APELLIDO" Style="font-weight: bold; font-size: 18px;"></asp:Label><br />
+        <input class="formulario" placeholder="NOMBRE O APELLIDO" id="Correo" type="text" runat="server"  AutoPostBack="true"/>
+        <asp:Button class="botonsubmit" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmit" Text="BASE INTERNA"  OnClick="Unnamed1_Click"/></center>    
+                    
                     <hr />
                     <asp:Label ID="Label1" runat="server" Style="font-weight: bold; font-size: 18px;"></asp:Label> 
                     <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" AllowPaging="True" GridLines="None" BackColor="White" BorderStyle="None" BorderWidth="1px" CellPadding="20" ForeColor="Black"  CssClass="mGrid" PagerStyle-CssClass="pgr" margin-left="2%" AlternatingRowStyle-CssClass="alt" AllowSorting="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                         <Columns>                            
-                            <asp:BoundField DataField="Cedula" HeaderText="Cedula" SortExpression="Cedula de Identidad"></asp:BoundField>
-                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombres Completos"></asp:BoundField>
-                            <asp:BoundField DataField="NumeroCertificado" HeaderText="Numero de Certificado" SortExpression="NumeroCertificado"></asp:BoundField>
-                            <asp:BoundField DataField="Estado" HeaderText="Estado" SortExpression="Estado"></asp:BoundField>
-                            <asp:CommandField ShowSelectButton="True" ButtonType="Button" SelectText="ADICIONAR"></asp:CommandField>
+                            <asp:BoundField DataField="Cedula" HeaderText="CEDULA" SortExpression="Cedula"></asp:BoundField>
+                            <asp:BoundField DataField="Nombre" HeaderText="NOMBRE" SortExpression="Nombre"></asp:BoundField>
+                            <asp:BoundField DataField="Relacion" HeaderText="RELACION" SortExpression="Relacion"></asp:BoundField>
+                            <asp:BoundField DataField="Producto" HeaderText="CPBERTURA" SortExpression="Producto"></asp:BoundField>
+                            <asp:BoundField DataField="TotalPrima" HeaderText="PRIMA" SortExpression="TotalPrima"></asp:BoundField>
+                            <asp:BoundField DataField="NumeroCertificado" HeaderText="NUMERO DE CERTIFICADO" SortExpression="NumeroCertificado"></asp:BoundField>
                         </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                             <HeaderStyle BackColor="white" Font-Bold="True" ForeColor="black" />
@@ -33,19 +37,20 @@
                             <SortedDescendingHeaderStyle BackColor="#242121" />
 <PagerStyle CssClass="pgr"></PagerStyle>
                     </asp:GridView>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:affisDBConnectionString %>' SelectCommand="SELECT [Cedula], [Nombre], [NumeroCertificado], [Estado] FROM [Asegurados] WHERE ([Cedula] = @Cedula) OR ([NumeroCertificado] = @NumeroCertificado)">
-                        <SelectParameters>                            
-                            <asp:CookieParameter CookieName="paramCedula" Name="Cedula" Type="Int32"></asp:CookieParameter>
-                            <asp:CookieParameter CookieName="paramCedula" Name="NumeroCertificado" Type="Int32"></asp:CookieParameter>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:affisDBConnectionString %>' SelectCommand="SELECT [Nombre], [Cedula], [Relacion], [Producto], [TotalPrima], [NumeroCertificado] FROM [Dependientes] WHERE ([Nombre] LIKE '%' + @Nombre + '%')">
+                        <SelectParameters>
+                            <asp:CookieParameter CookieName="paramConsNom" Name="Nombre" Type="String"></asp:CookieParameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <hr/>                                            
+                    <hr />
+                                            
                     <CENTER><asp:Button runat="server" CssClass="botonsubmitTRES" text="VOLVER" OnClick="Unnamed_Click1" UseSubmitBehavior="False"></asp:Button>  
                     <asp:Button  value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmitTRES" Text="CANCELAR" OnClick="Unnamed_Click" UseSubmitBehavior="False" />                          
-                    <asp:Button ID="INCLU" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmitDOS" Text="INCLUIR" OnClick="Unnamed2_Click"/>   
+                        <asp:Button ID="INCLU" value="REGISTRARME" type="submit" runat="server" CssClass="botonsubmitDOS" Text="INCLUIR" OnClick="Unnamed2_Click"/>   
                     </CENTER>
                 </div>
             </div>
         </div>
-        </div>    
+        </div>
+    
 </asp:Content>

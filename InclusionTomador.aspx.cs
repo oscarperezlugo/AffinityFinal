@@ -31,7 +31,7 @@ namespace ReachSystem
                     if (!IsPostBack)
                     {
                         SqlConnection con = new SqlConnection("workstation id=affisDB.mssql.somee.com;packet size=4096;user id=localarts_SQLLogin_2;pwd=kgiivi9to9;data source=affisDB.mssql.somee.com;persist security info=False;initial catalog=affisDB");
-                        SqlCommand cmd = new SqlCommand("select Medio from Medios where NombreComercial = '" + fijador + "'", con);
+                        SqlCommand cmd = new SqlCommand("select disticnt Medio from Medios where NombreComercial = '" + fijador + "'", con);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
